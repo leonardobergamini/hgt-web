@@ -1,0 +1,91 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/LayoutAdm.cshtml";
+}
+
+<div class="container mt-5">
+    <div class="row">
+
+        <div class="col-12 text-center my-5">
+            <h1 class="display-4"><i class="fas fa-newspaper cor-icones"></i>  Destaques</h1>
+        </div>
+
+    </div>
+
+    <!-- Form -->
+    <div class="row justify-content-center mb-5">
+        <div class="col-sm-12 col-md-10 col-lg-8">
+
+            <ul class="nav nav-pills justify-content-center mb-4" id="pills-nav" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link" id="nav-pills-01" href="/Destaques/Index">Destaque 1</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" id="nav-pills-02" href="/Destaques/Destaque2">Destaque 2</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="nav-pills-03" href="/Destaques/Destaque3">Destaque 3</a>
+                </li>
+            </ul>
+
+            <br />
+
+            <form role="form" method="post" action="Salvar" id="form1">
+
+                <div class="form-row">
+
+                    <div class="form-group col-sm-12">
+                        <label for="inputEnd">Título:</label>
+                        <input type="text" class="form-control" name="Name" id="Name1" placeholder="Título" value="@ViewBag.Destaques[1].Name">
+                    </div>
+
+                </div>
+
+                <div class="form-row">
+
+                    <div class="form-group col-sm-12">
+                        <label for="inputEnd">Url Youtube:</label>
+                        <input type="text" class="form-control" name="UrlYoutube" id="UrlYoutube1" placeholder="Url Youtube" value="@ViewBag.Destaques[1].UrlYoutube">
+                    </div>
+
+                </div>
+
+                <div class="form-row">
+
+                    <div class="form-group col-sm-12">
+                        <label for="Descricao1">Descrição:</label>
+                        <textarea class="form-control" name="Descricao" id="Descricao1" placeholder="Descrição..." rows="5">@ViewBag.Destaques[1].Descricao</textarea>
+                    </div>
+                </div>
+
+                <br />
+
+                <div class="form-row">
+
+                    <div class="col-sm-12 text-center">
+                        <button type="submit" class="btn btn-principal btn-lg" id="Salvar1">Salvar</button>
+                    </div>
+
+                </div>
+
+                <div class="form-row" style="display:none;">
+
+                    <div class="form-group col-sm-12">
+                        <label for="inputEnd">IdDestaque:</label>
+                        <input type="text" class="form-control" name="IdDestaque" id="IdDestaque1" placeholder="Id" value="@ViewBag.Destaques[1].IdDestaque">
+                    </div>
+
+                </div>
+
+            </form>
+
+            <br />
+
+        </div>
+    </div>
+    <!-- Fim do Form -->
+
+
+</div>
+

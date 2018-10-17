@@ -1,0 +1,214 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/LayoutAdm.cshtml";
+}
+
+<div class="container mt-5">
+    <div class="row">
+
+        <div class="col-12 text-center my-5">
+            <h1 class="display-4"><i class="far fa-calendar-alt cor-icones"></i>  Eventos</h1>
+        </div>
+
+    </div>
+
+
+
+    <div class="row justify-content-center mb-5">
+
+        <div class="col-sm-12 col-md-10 col-lg-8">
+
+            <form role="form" method="post" action="Buscar" id="formPesquisa">
+
+                <div class="form-row">
+
+                    <div class="form-group col-sm-12">
+                        <a href="/Evento/AdicionarEvento" style="text-decoration:none; color:#000"><i class="fas fa-plus cor-icones mr-2"></i>Adicionar novo evento</a>
+                    </div>
+
+                </div>
+
+                <br />
+
+                <div class="form-row">
+
+                    <div class="form-group col-sm-3">
+                        <select id="Filtro" class="form-control" name="Filtro">
+                            <option id="Nome" value="Nome">Nome</option>
+                            <option id="IdEvento" value="Id">Código</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group col-sm-7">
+                        <input type="text" class="form-control" name="Dado" id="Dado" placeholder="Pesquisar...">
+                    </div>
+
+                    <div class="form-group col-sm-2">
+                        <button id="btnPesquisar" type="submit" class="btn btn-principal btn-sm-2" style="width:110px"><i class="fas fa-search" style="color:#fff"></i></button>
+                    </div>
+
+                </div>
+            </form>
+
+            <div class="form-row">
+
+                <div class="form-group col-sm-12">
+                    <hr />
+                </div>
+
+            </div>
+
+            <form role="form" method="post" action="Alterar" id="formEvento">
+
+                <div class="form-row">
+
+                    <div class="form-group col-sm-4">
+                        <label for="IdEvento">Código</label>
+                        <input type="text" class="form-control" id="IdEvento2" disabled="disabled" value="@ViewBag.EventoPesquisado.IdEvento">
+                    </div>
+
+                    <div class="form-group col-sm-8">
+                        <label for="Nome">Atração</label>
+                        <input type="text" class="form-control" name="Nome" id="Nome" value="@ViewBag.EventoPesquisado.Nome">
+                    </div>
+
+                </div>
+
+                <br>
+
+                <div class="form-row">
+
+                    <div class="form-group col-sm-3">
+                        <label for="DataInicio">Dia do início</label>
+                        <input type="text" class="form-control" name="DataInicio" id="DataInicio" value="@ViewBag.DataInicio">
+                    </div>
+
+                    <div class="form-group col-sm-3">
+                        <label for="HoraInicioEvento">Horario de início</label>
+                        <input type="text" class="form-control" name="HoraInicioEvento" id="HoraInicioEvento" value="@ViewBag.HoraInicioEvento">
+                    </div>
+
+                    <div class="form-group col-sm-3">
+                        <label for="DataFinal">Dia do término</label>
+                        <input type="text" class="form-control" name="DataFinal" id="DataFinal" value="@ViewBag.DataFinal">
+                    </div>
+
+                    <div class="form-group col-sm-3">
+                        <label for="HoraTerminoEvento">Horário de término</label>
+                        <input type="text" class="form-control" name="HoraTerminoEvento" id="HoraTerminoEvento" value="@ViewBag.HoraTerminoEvento">
+                    </div>
+
+                </div>
+
+                <div class="form-row">
+
+                    <div class="form-group col-sm-6">
+                        <label for="DataInicioVenda">Dia de início das vendas</label>
+                        <input type="text" class="form-control" name="DataInicioVenda" id="DataInicioVenda" value="@ViewBag.DataInicioVenda">
+                    </div>
+
+                    <div class="form-group col-sm-6">
+                        <label for="DataFinalVenda">Dia do fim das vendas</label>
+                        <input type="text" class="form-control" name="DataFinalVenda" id="DataFinalVenda" value="@ViewBag.DataFinalVenda">
+                    </div>
+
+                </div>
+
+                <br>
+
+                <div class="form-row">
+
+                    <div class="form-group col-sm-9">
+                        <label for="selectLocal">Local</label>
+                        <select id="selectLocal" class="form-control" name="IdLocal">
+                            <option value="@ViewBag.Local.IdLocal">@ViewBag.Local.Nome</option>
+                            @foreach (var local in ViewBag.Locais)
+                            {
+                                <option value="@local.IdLocal">@local.Nome</option>
+                            }
+                        </select>
+                    </div>
+
+                    <div class="form-group col-sm-3">
+                        <label for="selectFaixaEtaria">Classificação</label>
+                        <select id="selectFaixaEtaria" class="form-control" name="IdFaixaEtaria">
+                            <option value="@ViewBag.FaixaEtaria.IdFaixaEtaria">@ViewBag.FaixaEtaria.Nome</option>
+                            @foreach (var faixaEtaria in ViewBag.FaixasEtarias)
+                            {
+                                <option value="@faixaEtaria.IdFaixaEtaria">@faixaEtaria.Nome</option>
+                            }
+                        </select>
+                    </div>
+
+                </div>
+
+                <br />
+
+                <div class="form-row">
+
+                    <div class="form-group col-sm-12">
+                        <label for="Descricao">Descrição</label>
+                        <textarea class="form-control" name="Descricao" id="Descricao" rows="5">@ViewBag.EventoPesquisado.Descricao</textarea>
+                    </div>
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="form-group col-sm-12">
+                        <label for="UrlImagem">Url da imagem</label>
+                        <input type="text" class="form-control" name="UrlImagem" id="UrlImagem" value="@ViewBag.EventoPesquisado.UrlImagem">
+                    </div>
+
+                </div>
+
+                <br>
+
+                <div class="form-row" style="display:none;">
+
+                    <div class="form-group col-sm-12">
+                        <label for="inputEnd">IdDestaque:</label>
+                        <input type="text" class="form-control" name="IdEvento" id="IdEvento" value="@ViewBag.EventoPesquisado.IdEvento">
+                    </div>
+
+                </div>
+
+                <div class="form-row">
+
+                    <div class="col-sm-12 text-center">
+                        <button type="submit" class="btn btn-principal btn-lg" id="Salvar1">Salvar</button>
+                        
+                    </div>
+
+                </div>
+
+            </form>
+
+            <br /><br />
+
+            <form role="form" method="post" action="Excluir" id="formExcluir">
+                <div class="form-row" style="display:none;">
+
+                    <div class="form-group col-sm-12">
+                        <label for="inputEnd">IdDestaque:</label>
+                        <input type="text" class="form-control" name="IdEvento" id="IdEvento3" value="@ViewBag.EventoPesquisado.IdEvento">
+                    </div>
+
+                </div>
+
+                <div class="form-row">
+                    <div class="col-sm-12 text-center">
+                        <button type="submit" class="btn btn-danger btn-sm" id="Excluir" 
+                                style="width:170px; height:30px; font-size:15px;"><i class="fas fa-times mr-2"></i>Excluir evento</button>
+                    </div>
+                </div>
+                
+            </form>
+
+        </div>
+    </div>
+
+
+</div>

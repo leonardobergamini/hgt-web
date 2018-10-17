@@ -1,0 +1,163 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/LayoutAdm.cshtml";
+}
+
+<div class="container mt-5">
+    <div class="row">
+
+        <div class="col-12 text-center my-5">
+            <h1 class="display-4"><i class="far fa-address-card cor-icones"></i>  Clientes</h1>
+        </div>
+
+    </div>
+ 
+        
+
+        <div class="row justify-content-center mb-5">
+
+            <div class="col-sm-12 col-md-10 col-lg-8">
+
+                <form role="form" method="post" action="Pesquisar" id="formPesquisa">
+                    <div class="form-row">
+
+                        <div class="form-group col-sm-3">
+                            <select id="Filtro" class="form-control" name="Filtro">
+                                <option id="CPF" value="CPF">CPF</option>
+                                <option id="E-mail" value="Email">E-mail</option>
+                                <option id="Usuario" value="Usuario">Usuário</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group col-sm-7">
+                            <input type="text" class="form-control" name="Dado" id="Dado" placeholder="Pesquisar...">
+                        </div>
+
+                        <div class="form-group col-sm-2">
+                            <button id="btnPesquisar" type="submit" class="btn btn-principal btn-sm-2" style="width:110px"><i class="fas fa-search" style="color:#fff"></i></button>
+                        </div>
+
+                    </div>
+                </form>
+
+                <div class="form-row">
+
+                    <div class="form-group col-sm-12">
+                        <hr />
+                    </div>
+
+                </div>
+
+                <div class="form-row">
+
+                    <div class="form-group col-sm-6">
+                        <label for="inputNome">Nome</label>
+                        <input type="text" class="form-control" name="Nome" id="Nome" disabled="disabled" value="@ViewBag.Cliente.Nome">
+                    </div>
+
+                    <div class="form-group col-sm-6">
+                        <label for="inputSobrenome">Sobrenome</label>
+                        <input type="text" class="form-control" name="Sobrenome" id="Sobrenome" disabled="disabled" value="@ViewBag.Cliente.Sobrenome">
+                    </div>
+
+                </div>
+
+                <div class="form-row">
+
+                    <div class="form-group col-sm-3">
+                        <label for="inputData">Data de nascimento</label>
+                        <input type="text" class="form-control" name="DataNascimento" id="DataNascimento" disabled="disabled" value="@ViewBag.Cliente.DataNascimento">
+                    </div>
+
+                    <div class="form-group col-sm-5">
+                        <label for="inputCPF">CPF</label>
+                        <input type="text" class="form-control" name="Cpf" id="Cpf" disabled="disabled" value="@ViewBag.Cliente.Cpf">
+                    </div>
+
+                    <div class="form-group col-sm-4">
+                        <label for="inputRG">RG</label>
+                        <input type="text" class="form-control" name="Rg" id="Rg" disabled="disabled" value="@ViewBag.Cliente.Rg">
+                    </div>
+
+                </div>
+
+                <br>
+
+                <div class="form-row">
+
+                    <div class="form-group col-sm-12">
+                        <label for="inputEndereco">Endereço</label>
+                        <input type="text" class="form-control" name="Endereco" id="Endereco" disabled="disabled" value="@ViewBag.Cliente.Endereco">
+                    </div>
+
+                </div>
+
+                <div class="form-row">
+
+                    <div class="form-group col-sm-3">
+                        <label for="inputNumero">Número</label>
+                        <input type="text" class="form-control" name="Numero" id="Numero" disabled="disabled" value="@ViewBag.Cliente.Numero">
+                    </div>
+
+                    <div class="form-group col-sm-9">
+                        <label for="inputComplemento">Complemento</label>
+                        <input type="text" class="form-control" name="Complemento" id="Complemento" disabled="disabled" value="@ViewBag.Cliente.Complemento">
+                    </div>
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="form-group col-sm-6">
+                        <label for="inputCidade">Cidade</label>
+                        <input type="text" class="form-control" name="Cidade" id="Cidade" disabled="disabled" value="@ViewBag.Cliente.cidade">
+                    </div>
+
+                    <div class="form-group col-sm-2">
+                        <label for="Estado">Estado</label>
+                        <input type="text" class="form-control" name="Estado" id="Estado" disabled="disabled" value="@ViewBag.Cliente.estado">
+                    </div>
+
+                    <div class="form-group col-sm-4">
+                        <label for="inputCEP">CEP</label>
+                        <input type="text" class="form-control" name="Cep" id="Cep" disabled="disabled" value="@ViewBag.Cliente.Cep">
+                    </div>
+
+                </div>
+
+                <br>
+
+                <div class="form-row">
+
+                    <div class="form-group col-sm-4">
+                        <label for="inputTelefone">Telefone</label>
+                        <input type="text" class="form-control" name="Telefone" id="Telefone" disabled="disabled" value="@ViewBag.Cliente.Telefone">
+                    </div>
+
+                    <div class="form-group col-sm-8">
+                        <label for="inputEmail">E-mail</label>
+                        <input type="text" class="form-control" name="Email" id="Email" disabled="disabled" value="@ViewBag.Cliente.Email">
+                    </div>
+
+                </div>
+
+                <br>
+
+                <div class="form-row">
+
+                    <div class="form-group col-sm-4">
+                        <label for="inputUsuario">Usuário</label>
+                        <input type="text" class="form-control" name="Usuario" id="Usuario" disabled="disabled" value="@ViewBag.Cliente.Usuario">
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+
+
+    </div>
+

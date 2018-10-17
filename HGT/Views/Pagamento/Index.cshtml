@@ -1,0 +1,118 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = @ViewBag.Layout;
+}
+
+<div class="container mt-5">
+    <div class="row">
+
+        <div class="col-12 text-center my-5">
+            <h1 class="display-5">Confirmar Pedido</h1>
+        </div>
+
+    </div>
+</div>
+
+<div class="container">
+
+    <!-- Form -->
+    <div class="row justify-content-center mb-5">
+        <div class="col-sm-12 col-md-10 col-lg-8">
+            <h4>Pagamento:</h4>
+            <br>
+            <form>
+
+                <div class="form-row">
+
+                    <div class="form-group col-sm-7">
+                        <label for="inputNumero">Número do cartão de crédito</label>
+                        <input type="text" class="form-control" id="inputNome" placeholder="Número do cartão" value="@ViewBag.CartaoCredito.NumeroCartao">
+                        <div style="font-size: 50px" class="text-muted">
+                            <i class="fab fa-cc-visa"></i> <i class="fab fa-cc-mastercard"></i> <i class="fab fa-cc-diners-club"></i> <i class="fab fa-cc-amex"></i>
+                        </div>
+                    </div>
+
+                    <div class="form-group col-sm-5">
+                        <label for="inputValidade">Validade do cartão</label>
+                        <input type="text" class="form-control" id="inputSobrenome" placeholder="Mês / Ano" value="@ViewBag.CartaoCredito.Validade">
+                    </div>
+
+                </div>
+
+                <div class="form-row">
+
+                    <div class="form-group col-sm-7">
+                        <label for="inputNome">Nome</label>
+                        <input type="text" class="form-control" id="inputNome" placeholder="Nome" value="@ViewBag.CartaoCredito.NomeTitular">
+                    </div>
+
+                    <div class="form-group col-sm-5">
+                        <label for="inputCodigo">Código de segurança</label>
+                        <input type="text" class="form-control" id="inputSobrenome" placeholder="Código" value="@ViewBag.CartaoCredito.CodigoSeguranca">
+                    </div>
+
+                </div>
+
+
+                <br>
+
+                <div class="form-row">
+
+                    <div class="col-sm-12 text-center">
+                        <button type="submit" class="btn btn-principal btn-lg">Confirmar</button>
+                    </div>
+
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+    <!-- Fim do Form -->
+
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="siteModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title">KASABIAN</h5>
+                <button type="button" class="close" data-dismiss="modal"></button>
+                <span>&times;</span>
+            </div>
+
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row">
+
+                        <div class="col-sm-6">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Data:<p>30/09/2018</p></li>
+                                <li class="list-group-item">Horário:<p>21:00</p></li>
+                                <li class="list-group-item">Descrição:<p>Show</p></li>
+                                <li class="list-group-item">Classificação:<p>16 anos</p></li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Local:<p>Credicard Hall</p></li>
+                                <li class="list-group-item">Descrição:<p>Casa de shows</p></li>
+                                <li class="list-group-item">Localidade:<p>São Paulo - SP</p></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary  rounded-pill ml-4" data-dismiss="modal">VOLTAR</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- Fim do Modal -->

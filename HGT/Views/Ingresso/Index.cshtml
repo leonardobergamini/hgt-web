@@ -1,0 +1,158 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = @ViewBag.Layout;
+}
+
+<div class="container mt-5">
+    <div class="row">
+
+        <div class="col-12 text-center my-5">
+            <h1 class="display-4"><i class="fas fa-ticket-alt cor-icones"></i>  Ingresso</h1>
+        </div>
+
+    </div>
+</div>
+
+<div class="container">
+    <div class="row justify-content-center">
+
+        <div class="col-sm-6 col-md-7 mb-4">
+            <img class="card-img-top rounded" src="@Url.Content(ViewBag.Evento.UrlImagem)">
+        </div>
+
+    </div>
+
+    <div class="justify-content-center text-center">
+
+        <h2>@ViewBag.Evento.Nome</h2>
+        <h6 class="text-muted">@ViewBag.Local.Nome</h6>
+        <h6 class="text-muted">@ViewBag.Local.Cidade - @ViewBag.Local.UF</h6>
+        <h6 class="text-muted">@ViewBag.Evento.DataInicio.ToString("dd/MM/yyyy")</h6>
+        <h6 class="text-muted">@ViewBag.Evento.HoraInicioEvento.ToString("hh:mm")</h6>
+        <h8 class="text-muted">
+            <a href="" class="card-link text-secondary  link-custom1" data-toggle="modal" data-target="#siteModal"><i class="fas fa-info-circle mr-1"></i>Mais Informações</a>
+        </h8>
+
+    </div>
+
+
+    <!-- Form -->
+    <div class="row justify-content-center mb-5">
+        <div class="col-sm-12 col-md-10 col-lg-8">
+
+            <form role="form" method="post" action="Avancar">
+
+                <div class="form-row justify-content-center">
+                    <div class="form-group col-sm-12">
+                        <label for="Setor-IdSetor">Seu setor</label>
+                        <select id="Setor-IdSetor" name="Setor" class="form-control">
+                            <option>Selecione...</option>
+                            @foreach (var setor in ViewBag.Setores)
+                            {
+                                <option value="@setor.IdSetor">@setor.Nome</option>
+                            }
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row justify-content-center">
+                    <div class="form-group col-sm-6">
+                        <label for="Ingresso-Tipo">Tipo de ingresso</label>
+                        <select id="Ingresso-Tipo" name="Tipo" class="form-control">
+                            <option>Selecione...</option>
+                            <option>Inteira</option>
+                            <option>Meia</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-sm-6">
+                        <label for="Ingresso-Quantidade">Quantidade</label>
+                        <select id="Ingresso-Quantidade" name="Quantidade" class="form-control">
+                            <option>Selecione...</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row mt-4">
+
+                    <div class="form-group col-sm-6 text-left">
+                        <h5>Sub-total: R$ 000,00</h5>
+                    </div>
+
+                    <div class="form-group col-sm-6 text-right">
+
+                        <div class="col-sm-12 text-right mr-0 ml-3">
+                            <button type="submit" class="btn btn-principal btn-lg">Avançar</button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+    <!-- Fim do Form -->
+
+</div>
+
+<script>
+    function Mensagem() {
+        var e = document.getElementById("Setor");
+        var itemSelecionado = e.options[e.selectedIndex].text;
+
+        alert(itemSelecionado);
+
+        return itemSelecionado;
+    }
+</script>
+
+
+<!-- Modal -->
+<div class="modal fade" id="siteModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title">@ViewBag.Evento.Nome</h5>
+                <button type="button" class="close" data-dismiss="modal"></button>
+                <span>&times;</span>
+            </div>
+
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row">
+
+                        <div class="col-sm-6">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Data:<p>@ViewBag.Evento.DataInicio.ToString("dd/MM/yyyy")</p></li>
+                                <li class="list-group-item">Horário:<p>@ViewBag.Evento.HoraInicioEvento.ToString("hh:mm")</p></li>
+                                <li class="list-group-item">Descrição:<p>Show</p></li>
+                                <li class="list-group-item">Classificação:<p>@ViewBag.FaixaEtaria.Nome</p></li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Local:<p>@ViewBag.Local.Nome</p></li>
+                                <li class="list-group-item">Descrição:<p>@ViewBag.Local.Descricao</p></li>
+                                <li class="list-group-item">Localidade:<p>@ViewBag.Local.Cidade</p></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary  rounded-pill ml-4" data-dismiss="modal">VOLTAR</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- Fim do Modal -->

@@ -1,0 +1,190 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/LayoutPrincipal.cshtml";
+}
+
+<div class="container mt-5">
+    <div class="row">
+
+        <div class="col-12 text-center my-5">
+            <h1 class="display-4"><i class="far fa-address-card cor-icones"></i>  Cadastro</h1>
+        </div>
+
+    </div>
+
+    <!-- Form -->
+    <div class="row justify-content-center mb-5">
+        <div class="col-sm-12 col-md-10 col-lg-8">
+
+            <form role="form" method="post" action="Cadastrar">
+
+                <div class="form-row">
+
+                    <div class="form-group col-sm-6">
+                        <label for="inputNome">Seu nome</label>
+                        <input type="text" class="form-control" name="Nome" id="Nome" placeholder="Nome" required>
+                    </div>
+
+                    <div class="form-group col-sm-6">
+                        <label for="inputSobrenome">Seu sobrenome</label>
+                        <input type="text" class="form-control" name="Sobrenome" id="Sobrenome" placeholder="Sobrenome" required>
+                    </div>
+
+                </div>
+
+                <div class="form-row">
+
+                    <div class="form-group col-sm-3">
+                        <label for="inputData">Data de nascimento</label>
+                        <input type="text" class="form-control" name="DataNascimento" id="DataNascimento" placeholder="___/___/______" required>
+                    </div>
+
+                    <div class="form-group col-sm-5">
+                        <label for="inputCPF">Seu CPF</label>
+                        <input type="text" class="form-control" name="Cpf" id="Cpf" placeholder="CPF" required>
+                    </div>
+
+                    <div class="form-group col-sm-4">
+                        <label for="inputRG">Seu RG</label>
+                        <input type="text" class="form-control" name="Rg" id="Rg" placeholder="RG" required>
+                    </div>
+
+                </div>
+
+                <br>
+
+                <div class="form-row">
+
+                    <div class="form-group col-sm-12">
+                        <label for="inputEndereco">Seu endereço</label>
+                        <input type="text" class="form-control" name="Endereco" id="Endereco" placeholder="Endereço" required>
+                    </div>
+
+                </div>
+
+                <div class="form-row">
+
+                    <div class="form-group col-sm-3">
+                        <label for="inputNumero">Seu número</label>
+                        <input type="text" class="form-control" name="Numero" id="Numero" placeholder="Número">
+                    </div>
+
+                    <div class="form-group col-sm-9">
+                        <label for="inputComplemento">Seu complemento</label>
+                        <input type="text" class="form-control" name="Complemento" id="Complemento" placeholder="Complemento">
+                    </div>
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="form-group col-sm-6">
+                        <label for="inputCidade">Sua cidade</label>
+                        <input type="text" class="form-control" name="Cidade" id="Cidade" placeholder="Cidade" required>
+                    </div>
+
+                    <div class="form-group col-sm-2">
+                        <label for="Estado">Seu estado</label>
+                        <select id="Estado" class="form-control" name="Estado">
+                            <option selected>Selecione...</option>
+                            <option>SP</option>
+                            <option>Resto</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group col-sm-4">
+                        <label for="inputCEP">Seu CEP</label>
+                        <input type="text" class="form-control" name="Cep" id="Cep" placeholder="CEP" required>
+                    </div>
+
+                </div>
+
+                <br>
+
+                <div class="form-row">
+
+                    <div class="form-group col-sm-4">
+                        <label for="inputTelefone">Seu telefone</label>
+                        <input type="text" class="form-control" name="Telefone" id="Telefone" placeholder="Telefone" required>
+                    </div>
+
+                    <div class="form-group col-sm-8">
+                        <label for="inputEmail">Seu e-mail</label>
+                        <input type="text" class="form-control" name="Email" id="Email" placeholder="E-mail" required>
+                    </div>
+
+                </div>
+
+                <br>
+
+                <div class="form-row">
+
+                    <div class="form-group col-sm-4">
+                        <label for="inputUsuario">Seu Usuário</label>
+                        <input type="text" class="form-control" name="Usuario" id="Usuario" placeholder="Usuário" required>
+                    </div>
+
+                    <div class="form-group col-sm-4">
+                        <label for="inputSenha">Sua senha</label>
+                        <input type="password" class="form-control" name="Senha" id="password" placeholder="Senha" required>
+                    </div>
+
+                    <div class="form-group col-sm-4">
+                        <label for="inputConfirma">Confirmar senha</label>
+                        <input type="password" class="form-control" id="confirm_password" placeholder="Senha" required>
+                    </div>
+
+                </div>
+
+
+                <br>
+
+                <div class="form-row">
+
+                    <div class="form-group col-sm-12">
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox"> Desejo receber novidades por e-mail.
+                            </label>
+                        </div>
+                    </div>
+
+                </div>
+
+                <br>
+
+                <div class="form-row">
+
+                    <div class="col-sm-12 text-center">
+                        <button type="submit" class="btn btn-principal btn-lg">Cadastrar</button>
+                    </div>
+
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+    <!-- Fim do Form -->
+
+
+</div>
+
+<script>
+    var password = document.getElementById("password"),
+        confirm_password = document.getElementById("confirm_password");
+
+    function validatePassword(){
+      if(password.value != confirm_password.value) {
+        confirm_password.setCustomValidity("Senhas diferentes!");
+      } else {
+        confirm_password.setCustomValidity('');
+      }
+    }
+
+    password.onchange = validatePassword;
+    confirm_password.onkeyup = validatePassword;
+</script>
+

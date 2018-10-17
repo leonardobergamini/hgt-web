@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/LayoutLogin.cshtml";
+}
+
+<div class="container mt-5">
+
+    <div class="row">
+
+        <div class="col-12 text-center my-5">
+            <h1 class="display-4"> </h1>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="container col-lg-3">
+
+    <form class="form-signin mx-2" role="form" method="post" action="Entrar">
+        <br>
+        <h2 class="form-signin-heading" align="center" style="color: silver">Conecte-se</h2>
+        <br>
+        <label for="inputEmail" class="sr-only">Usuário</label>
+        <input name="Usuario" id="Usuario" class="form-control" placeholder="Usuário" required autofocus>
+        <br>
+        <label for="inputPassword" class="sr-only">Senha</label>
+        <input type="password" name="Senha" id="Senha" class="form-control" placeholder="Senha" required>
+
+        <br>
+        <button class="btn btn-lg btn-pesquisar btn-block" type="submit">Entrar</button>
+        <br>
+    </form>
+
+</div>
+

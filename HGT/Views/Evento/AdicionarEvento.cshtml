@@ -1,0 +1,139 @@
+﻿
+@{
+    ViewBag.Title = "AdicionarEvento";
+    Layout = "~/Views/Shared/LayoutAdm.cshtml";
+}
+
+<div class="container mt-5">
+    <div class="row">
+
+        <div class="col-12 text-center my-5">
+            <h1 class="display-4"><i class="far fa-calendar-plus cor-icones"></i>  Novo Evento</h1>
+        </div>
+
+    </div>
+
+
+
+    <div class="row justify-content-center mb-5">
+
+        <div class="col-sm-12 col-md-10 col-lg-8">
+
+            <form role="form" method="post" action="Adicionar">
+
+                <div class="form-row">
+
+                    <div class="form-group col-sm-12">
+                        <label for="Nome">Atração</label>
+                        <input type="text" class="form-control" name="Nome" id="Nome">
+                    </div>
+
+                </div>
+
+                <br>
+
+                <div class="form-row">
+
+                    <div class="form-group col-sm-3">
+                        <label for="DataInicio">Dia do início</label>
+                        <input type="text" class="form-control" name="DataInicio" id="DataInicio">
+                    </div>
+
+                    <div class="form-group col-sm-3">
+                        <label for="HoraInicioEvento">Horario de início</label>
+                        <input type="text" class="form-control" name="HoraInicioEvento" id="HoraInicioEvento">
+                    </div>
+
+                    <div class="form-group col-sm-3">
+                        <label for="DataFinal">Dia do término</label>
+                        <input type="text" class="form-control" name="DataFinal" id="DataFinal">
+                    </div>
+
+                    <div class="form-group col-sm-3">
+                        <label for="HoraTerminoEvento">Horário de término</label>
+                        <input type="text" class="form-control" name="HoraTerminoEvento" id="HoraTerminoEvento">
+                    </div>
+
+                </div>
+
+                <div class="form-row">
+
+                    <div class="form-group col-sm-6">
+                        <label for="DataInicioVenda">Dia de início das vendas</label>
+                        <input type="text" class="form-control" name="DataInicioVenda" id="DataInicioVenda">
+                    </div>
+
+                    <div class="form-group col-sm-6">
+                        <label for="DataFinalVenda">Dia do fim das vendas</label>
+                        <input type="text" class="form-control" name="DataFinalVenda" id="DataFinalVenda">
+                    </div>
+
+                </div>
+
+                <br>
+
+                <div class="form-row">
+
+                    <div class="form-group col-sm-9">
+                        <label for="selectLocal">Local</label>
+                        <select id="selectLocal" class="form-control" name="IdLocal">
+                            <option>Selecione...</option>
+                            @foreach (var local in ViewBag.Locais)
+                            {
+                                <option value="@local.IdLocal">@local.Nome</option>
+                            }
+                        </select>
+                    </div>
+
+                    <div class="form-group col-sm-3">
+                        <label for="selectFaixaEtaria">Classificação</label>
+                        <select id="selectFaixaEtaria" class="form-control" name="IdFaixaEtaria">
+                            <option>Selecione...</option>
+                            @foreach (var faixaEtaria in ViewBag.FaixasEtarias)
+                            {
+                                <option value="@faixaEtaria.IdFaixaEtaria">@faixaEtaria.Nome</option>
+                            }
+                        </select>
+                    </div>
+
+                </div>
+
+                <br />
+
+                <div class="form-row">
+
+                    <div class="form-group col-sm-12">
+                        <label for="Descricao">Descrição</label>
+                        <textarea class="form-control" name="Descricao" id="Descricao" rows="5"></textarea>
+                    </div>
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="form-group col-sm-12">
+                        <label for="UrlImagem">Url da imagem</label>
+                        <input type="text" class="form-control" name="UrlImagem" id="UrlImagem">
+                    </div>
+
+                </div>
+
+                <br>
+
+                <div class="form-row">
+
+                    <div class="col-sm-12 text-center">
+                        <button type="submit" class="btn btn-principal btn-lg" id="Adicionar">Adicionar</button>
+                    </div>
+
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+
+
+</div>
+

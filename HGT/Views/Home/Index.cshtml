@@ -1,0 +1,337 @@
+﻿
+@{
+
+    ViewBag.Title = "Contato";
+
+    Layout = @ViewBag.Layout;
+
+}
+
+<header class="masthead text-center text-white">
+    <div class="masthead-content">
+        <div class="container">
+            <h1 class="masthead-heading mb-0">Have a Good Time</h1>
+            <h2 class="masthead-subheading mb-5">Curta cada momento.</h2>
+            <!-- <a href="#" class="btn btn-primary btn-xl rounded-pill mt-5">Learn More</a> -->
+            <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+                <form>
+                    <div class="form-row">
+                        <div class="col-12 col-md-9 mb-2 mb-md-0">
+                            <input type="text" class="form-control form-control-lg" placeholder="Encontre sua atração aqui..." name="inputPesquisar">
+                        </div>
+                        <div class="col-12 col-md-3">
+                            <button type="submit" class="btn btn-block btn-lg btn-pesquisar">Pesquisar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="bg-circle-1 bg-circle"></div>
+    <div class="bg-circle-2 bg-circle"></div>
+    <div class="bg-circle-3 bg-circle"></div>
+    <div class="bg-circle-4 bg-circle"></div>
+</header>
+
+<!-- Content -->
+<div class="container">
+    <div class="row mb-5">
+        <div class="col-12 text-center my-5">
+            <h1 class="display-4">Próximas atrações:</h1>
+            <h4 class="display-8">Se liga só no que vem por aí!</h4>
+        </div>
+    </div>
+
+    <!-- Cards -->
+    <div class="row mb-5 ">
+
+
+        <div class="col-sm-6 col-md-4 mb-4">
+            <div class="card mb-5">
+                <img class="card-img-top" src=@Url.Content(ViewBag.Eventos[0].UrlImagem)>
+                <div class="card-body">
+                    <h4 class="card-title">@ViewBag.Eventos[0].Nome</h4>
+                    <h6 class="card-subtitle mb-2 text-muted">@Html.Action("GetNomeLocal", new { Type = ViewBag.Eventos[0].IdLocal })  (@Html.Action("GetLocalidade", new { Type = ViewBag.Eventos[0].IdLocal }))</h6>
+                    <p class="card-text text-justify">@ViewBag.Eventos[0].Descricao</p>
+                    <a href="" class="card-link text-secondary  link-custom1 mr-2" data-toggle="modal" data-target="#m_0"><i class="fas fa-info-circle mr-2"></i>Mais Informações</a>
+                    <a onClick="GetMessage0()" href="/Ingresso/" class="btn btn-secondary  rounded-pill ml-4" style="color:#fff">GARANTIR INGRESSO</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4 mb-4">
+            <div class="card mb-5">
+                <img class="card-img-top" src=@Url.Content(ViewBag.Eventos[1].UrlImagem)>
+                <div class="card-body">
+                    <h4 class="card-title">@ViewBag.Eventos[1].Nome</h4>
+                    <h6 class="card-subtitle mb-2 text-muted">@Html.Action("GetNomeLocal", new { Type = ViewBag.Eventos[1].IdLocal })  (@Html.Action("GetLocalidade", new { Type = ViewBag.Eventos[1].IdLocal }))</h6>
+                    <p class="card-text text-justify">@ViewBag.Eventos[1].Descricao</p>
+                    <a href="" class="card-link text-secondary  link-custom1 mr-2" data-toggle="modal" data-target="#m_1"><i class="fas fa-info-circle mr-2"></i>Mais Informações</a>
+                    <a onClick="GetMessage1()" href="/Ingresso/" class="btn btn-secondary  rounded-pill ml-4" style="color:#fff">GARANTIR INGRESSO</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4 mb-4">
+            <div class="card mb-5">
+                <img class="card-img-top" src=@Url.Content(ViewBag.Eventos[2].UrlImagem)>
+                <div class="card-body">
+                    <h4 class="card-title">@ViewBag.Eventos[2].Nome</h4>
+                    <h6 class="card-subtitle mb-2 text-muted">@Html.Action("GetNomeLocal", new { Type = ViewBag.Eventos[2].IdLocal })  (@Html.Action("GetLocalidade", new { Type = ViewBag.Eventos[2].IdLocal }))</h6>
+                    <p class="card-text text-justify">@ViewBag.Eventos[2].Descricao</p>
+                    <a href="" class="card-link text-secondary  link-custom1 mr-2" data-toggle="modal" data-target="#m_2"><i class="fas fa-info-circle mr-2"></i>Mais Informações</a>
+                    <a onClick="GetMessage2()" href="/Ingresso/" class="btn btn-secondary  rounded-pill ml-4" style="color:#fff">GARANTIR INGRESSO</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4 mb-4">
+            <div class="card mb-5">
+                <img class="card-img-top" src=@Url.Content(ViewBag.Eventos[3].UrlImagem)>
+                <div class="card-body">
+                    <h4 class="card-title">@ViewBag.Eventos[3].Nome</h4>
+                    <h6 class="card-subtitle mb-2 text-muted">@Html.Action("GetNomeLocal", new { Type = ViewBag.Eventos[3].IdLocal })  (@Html.Action("GetLocalidade", new { Type = ViewBag.Eventos[3].IdLocal }))</h6>
+                    <p class="card-text text-justify">@ViewBag.Eventos[3].Descricao</p>
+                    <a href="" class="card-link text-secondary  link-custom1 mr-2" data-toggle="modal" data-target="#m_3"><i class="fas fa-info-circle mr-2"></i>Mais Informações</a>
+                    <a onClick="GetMessage3()" href="/Ingresso/" class="btn btn-secondary  rounded-pill ml-4" style="color:#fff">GARANTIR INGRESSO</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4 mb-4">
+            <div class="card mb-5">
+                <img class="card-img-top" src=@Url.Content(ViewBag.Eventos[4].UrlImagem)>
+                <div class="card-body">
+                    <h4 class="card-title">@ViewBag.Eventos[4].Nome</h4>
+                    <h6 class="card-subtitle mb-2 text-muted">@Html.Action("GetNomeLocal", new { Type = ViewBag.Eventos[4].IdLocal })  (@Html.Action("GetLocalidade", new { Type = ViewBag.Eventos[4].IdLocal }))</h6>
+                    <p class="card-text text-justify">@ViewBag.Eventos[4].Descricao</p>
+                    <a href="" class="card-link text-secondary  link-custom1 mr-2" data-toggle="modal" data-target="#m_4"><i class="fas fa-info-circle mr-2"></i>Mais Informações</a>
+                    <a onClick="GetMessage4()" href="/Ingresso/" class="btn btn-secondary  rounded-pill ml-4" style="color:#fff">GARANTIR INGRESSO</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4 mb-4">
+            <div class="card mb-5">
+                <img class="card-img-top" src=@Url.Content(ViewBag.Eventos[5].UrlImagem)>
+                <div class="card-body">
+                    <h4 class="card-title">@ViewBag.Eventos[5].Nome</h4>
+                    <h6 class="card-subtitle mb-2 text-muted">@Html.Action("GetNomeLocal", new { Type = ViewBag.Eventos[5].IdLocal })  (@Html.Action("GetLocalidade", new { Type = ViewBag.Eventos[5].IdLocal }))</h6>
+                    <p class="card-text text-justify">@ViewBag.Eventos[5].Descricao</p>
+                    <a href="" class="card-link text-secondary  link-custom1 mr-2" data-toggle="modal" data-target="#m_5"><i class="fas fa-info-circle mr-2"></i>Mais Informações</a>
+                    <a onClick="GetMessage5()" href="/Ingresso/" class="btn btn-secondary  rounded-pill ml-4" style="color:#fff">GARANTIR INGRESSO</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4 mb-4">
+            <div class="card mb-5">
+                <img class="card-img-top" src=@Url.Content(ViewBag.Eventos[6].UrlImagem)>
+                <div class="card-body">
+                    <h4 class="card-title">@ViewBag.Eventos[6].Nome</h4>
+                    <h6 class="card-subtitle mb-2 text-muted">@Html.Action("GetNomeLocal", new { Type = ViewBag.Eventos[6].IdLocal })  (@Html.Action("GetLocalidade", new { Type = ViewBag.Eventos[6].IdLocal }))</h6>
+                    <p class="card-text text-justify">@ViewBag.Eventos[6].Descricao</p>
+                    <a href="" class="card-link text-secondary  link-custom1 mr-2" data-toggle="modal" data-target="#m_6"><i class="fas fa-info-circle mr-2"></i>Mais Informações</a>
+                    <a onClick="GetMessage6()" href="/Ingresso/" class="btn btn-secondary  rounded-pill ml-4" style="color:#fff">GARANTIR INGRESSO</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4 mb-4">
+            <div class="card mb-5">
+                <img class="card-img-top" src=@Url.Content(ViewBag.Eventos[7].UrlImagem)>
+                <div class="card-body">
+                    <h4 class="card-title">@ViewBag.Eventos[7].Nome</h4>
+                    <h6 class="card-subtitle mb-2 text-muted">@Html.Action("GetNomeLocal", new { Type = ViewBag.Eventos[7].IdLocal })  (@Html.Action("GetLocalidade", new { Type = ViewBag.Eventos[7].IdLocal }))</h6>
+                    <p class="card-text text-justify">@ViewBag.Eventos[7].Descricao</p>
+                    <a href="" class="card-link text-secondary  link-custom1 mr-2" data-toggle="modal" data-target="#m_7"><i class="fas fa-info-circle mr-2"></i>Mais Informações</a>
+                    <a onClick="GetMessage7()" href="/Ingresso/" class="btn btn-secondary  rounded-pill ml-4" style="color:#fff">GARANTIR INGRESSO</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4 mb-4">
+            <div class="card mb-5">
+                <img class="card-img-top" src=@Url.Content(ViewBag.Eventos[8].UrlImagem)>
+                <div class="card-body">
+                    <h4 class="card-title">@ViewBag.Eventos[8].Nome</h4>
+                    <h6 class="card-subtitle mb-2 text-muted">@Html.Action("GetNomeLocal", new { Type = ViewBag.Eventos[8].IdLocal })  (@Html.Action("GetLocalidade", new { Type = ViewBag.Eventos[8].IdLocal }))</h6>
+                    <p class="card-text text-justify">@ViewBag.Eventos[8].Descricao</p>
+                    <a href="" class="card-link text-secondary  link-custom1 mr-2" data-toggle="modal" data-target="#m_3"><i class="fas fa-info-circle mr-2"></i>Mais Informações</a>
+                    <a onClick="GetMessage8()" href="/Ingresso/" class="btn btn-secondary  rounded-pill ml-4" style="color:#fff">GARANTIR INGRESSO</a>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            function GetMessage0() {
+                $.get("/Home/GetMessage0", function (data) {
+                });
+            }
+            function GetMessage1() {
+                $.get("/Home/GetMessage1", function (data) {
+                });
+            }
+            function GetMessage2() {
+                $.get("/Home/GetMessage2", function (data) {
+                });
+            }
+            function GetMessage3() {
+                $.get("/Home/GetMessage3", function (data) {
+                });
+            }
+            function GetMessage4() {
+                $.get("/Home/GetMessage4", function (data) {
+                });
+            }
+            function GetMessage5() {
+                $.get("/Home/GetMessage5", function (data) {
+                });
+            }
+            function GetMessage6() {
+                $.get("/Home/GetMessage6", function (data) {
+                });
+            }
+            function GetMessage7() {
+                $.get("/Home/GetMessage7", function (data) {
+                });
+            }
+            function GetMessage8() {
+                $.get("/Home/GetMessage8", function (data) {
+                });
+            }
+        </script>
+
+
+        @for (int i = 0; i < 9; i++)
+        {
+            <!-- Modal -->
+            <div class="modal fade" id="m_@i" tabindex="-1" role="dialog">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">@ViewBag.Eventos[i].Nome</h5>
+                            <button type="button" class="close" data-dismiss="modal"></button>
+                            <span>&times;</span>
+                        </div>
+                        <div class="modal-body">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item">Data:<p>@ViewBag.Eventos[i].DataInicio.ToString("dd/MM/yyyy")</p></li>
+                                            <li class="list-group-item">Horário:<p>@ViewBag.Eventos[i].HoraInicioEvento.ToString("hh:mm")</p></li>
+                                            <li class="list-group-item">Descrição:<p>Show</p></li>
+                                            <li class="list-group-item">Classificação:<p>@Html.Action("GetValorFaixaEtaria", new { Type = ViewBag.Eventos[i].IdFaixaEtaria })</p></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item">Local:<p>@Html.Action("GetNomeLocal", new { Type = ViewBag.Eventos[i].IdLocal })</p></li>
+                                            <li class="list-group-item">Descrição:<p>@Html.Action("GetDescricaoLocal", new { Type = ViewBag.Eventos[i].IdLocal })</p></li>
+                                            <li class="list-group-item">Localidade:<p>@Html.Action("GetLocalidade", new { Type = ViewBag.Eventos[i].IdLocal })</p></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary  rounded-pill ml-4" data-dismiss="modal">VOLTAR</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Fim do Modal -->
+
+
+        }
+
+    </div>
+    <!-- Fim dos Cards -->
+
+</div>
+<!-- Jumbotron -->
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1 class="display-4"><i class="fas fa-play cor-icones"></i>  Destaques</h1>
+                <p class="lead">Dicas do HGT sobre o que está rolando por aí. Vale o play:</p>
+                <hr>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <ul class="nav nav-pills justify-content-center mb-4" id="pills-nav" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="nav-pills-01" data-toggle="pill" href="#nav-item-01">@ViewBag.Destaques[2].Name</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="nav-pills-02" data-toggle="pill" href="#nav-item-02">@ViewBag.Destaques[1].Name</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="nav-pills-03" data-toggle="pill" href="#nav-item-03">@ViewBag.Destaques[0].Name</a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="nav-pills-content">
+                    <div class="tab-pane fade show active" id="nav-item-01" role="tabpanel">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="embed-responsive embed-responsive-16by9">
+                                    <iframe class="embed-responsive-item" src="@ViewBag.Destaques[2].UrlYoutube"></iframe>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <p>@ViewBag.Destaques[2].Descricao</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade show" id="nav-item-02" role="tabpanel">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="embed-responsive embed-responsive-16by9">
+                                    <iframe class="embed-responsive-item" src="@ViewBag.Destaques[1].UrlYoutube"></iframe>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <p>@ViewBag.Destaques[1].Descricao</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade show" id="nav-item-03" role="tabpanel">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="embed-responsive embed-responsive-16by9">
+                                    <iframe class="embed-responsive-item" src="@ViewBag.Destaques[0].UrlYoutube"></iframe>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <p>@ViewBag.Destaques[0].Descricao</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<section>
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 order-lg-2">
+                <div class="p-5">
+                    <img class="img-fluid rounded" src="@Url.Content("~/Images/crowd.jpg")" alt="Crowd">
+                </div>
+            </div>
+            <div class="col-lg-6 order-lg-1">
+                <div class="p-5 text-justify">
+                    <h2 class="display-4">Baixe o app</h2>
+                    <p>Seu ingresso está no app! O aplicativo possui a funcionalidade de ingresso virtual, é só exibir na entrada do evento e curtir sua atração sem preocupação. Através do app você também tem total controle sobre seus ingressos adquiridos. Disponível para as plataformas Android e IOS.</p>
+                    <h1 align="center"><i class="fab fa-google-play mr-4"></i><i class="fab fa-apple"></i></h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>   

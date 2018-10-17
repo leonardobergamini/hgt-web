@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/LayoutPrincipal.cshtml";
+}
+
+<div class="container mt-5">
+    <div class="row">
+
+        <div class="col-12 text-center my-5">
+            <h1 class="display-4">Entre para continuar:</h1>
+        </div>
+
+    </div>
+</div>
+
+<div class="container col-lg-3 text-center">
+
+    <form class="form-signin mx-2" role="form" method="post" action="Entrar">
+
+        <label for="inputEmail" class="sr-only">Usuário</label>
+        <input name="Usuario" id="Usuario" class="form-control" placeholder="Usuário" required autofocus>
+        <br>
+        <label for="inputPassword" class="sr-only">Senha</label>
+        <input type="password" name="Senha" id="Senha" class="form-control" placeholder="Senha" required>
+
+        <br>
+        <button class="btn btn-lg btn-pesquisar btn-block" type="submit">Entrar</button>
+        <br>
+    </form>
+    <p class="text-muted">ou</p>
+    <a href="/Cadastro/Index" class="text-muted">Clique aqui e crie uma conta.</a>
+
+</div>
+
+<div class="container mt-5">
+    <div class="row">
+
+        <div class="col-12 text-center my-5">
+            <h1 class="display-4"></h1>
+        </div>
+
+    </div>
+</div>
+
