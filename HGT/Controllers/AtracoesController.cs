@@ -15,7 +15,6 @@ namespace HaveAGoodTime.Controllers
             Dados d1 = new Dados();
             ViewBag.Layout = d1.getLayout();
 
-
             return View();
         }
     }
